@@ -1,33 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tabs, Tab } from 'react-bootstrap';
 import './sass/App.scss';
 
-class App extends Component {
+class App extends React.Component {
+  handleSelect(eventKey, event) {
+    this.setState({ activeTab: eventKey })
+  }
+
   render() {
     return (
-  <Tabs>
-    <TabList>
-      <Tab>General</Tab>
-      <Tab>Resume</Tab>
-      <Tab>Projects</Tab>
-      <Tab>Tools</Tab>
-      <Tab>Contact</Tab>
-    </TabList>
-
-    <TabPanel>
-    </TabPanel>
-    <TabPanel>
-    </TabPanel>
-    <TabPanel>
-    </TabPanel>
-    <TabPanel>
-    </TabPanel>
-    <TabPanel>
-    </TabPanel>
-  </Tabs>
+      <Tabs defaultActiveKey={1}>
+      <Tab eventKey={1} title='General'>
+      </Tab>
+      <Tab eventKey={2} title='Resume'>
+      </Tab>
+      <Tab eventKey={3} title='Contact'>
+      </Tab>
+      <Tab eventKey={4} title='Tools'>
+      </Tab>
+    </Tabs>
     );
   }
 }
-
 export default App;
