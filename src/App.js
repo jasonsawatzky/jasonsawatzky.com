@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import { Tabs, Tab } from 'react-bootstrap';
+import ToolsPage from './pages/Tools'
 import './sass/App.scss';
 
 class App extends React.Component {
@@ -18,6 +19,7 @@ class App extends React.Component {
       <Tab eventKey={3} title='Contact'>
       </Tab>
       <Tab eventKey={4} title='Tools'>
+        <ToolsPage></ToolsPage>
       </Tab>
     </Tabs>
     );
