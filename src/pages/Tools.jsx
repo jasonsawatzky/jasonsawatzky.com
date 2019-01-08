@@ -1,7 +1,8 @@
 import React from 'react'
 import Grid from '../components/Grid'
+import { List } from 'immutable'
 
-const items = [
+const items = List([
   {
     title: 'md-graphql-spec',
     description: 'A tool to generate graphql documentation in markdown'
@@ -30,7 +31,7 @@ const items = [
     title: 'Test Tool 6',
     description: 'A test tool'
   },
-]
+])
 
 export default function() {
   return <><Grid items={items} cols={3}/></>
