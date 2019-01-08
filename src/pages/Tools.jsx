@@ -1,20 +1,37 @@
 import React from 'react'
-import { Grid, Row, Col, Panel } from 'react-bootstrap';
+import Grid from '../components/Grid'
 
-export default () =>
-<Grid style={{marginTop: '3%'}}>
-  <Row className="show-grid">
-  </Row>
-  <Row className="show-grid">
-    <Col xs={12} md={6}>
-      <Panel>
-        <Panel.Body>Basic panel example</Panel.Body>
-      </Panel>
-    </Col>
-    <Col xs={12} md={6}>
-      <Panel>
-        <Panel.Body>Basic panel example</Panel.Body>
-      </Panel>
-    </Col>
-  </Row>
-</Grid>
+const items = [
+  {
+    title: 'md-graphql-spec',
+    description: 'A tool to generate graphql documentation in markdown'
+  },
+  {
+    title: 'Test Tool 1',
+    description: 'A test tool'
+  },
+  {
+    title: 'Test Tool 2',
+    description: 'A test tool'
+  },
+  {
+    title: 'Test Tool 3',
+    description: 'A test tool'
+  },
+  {
+    title: 'Test Tool 4',
+    description: 'A test tool'
+  },
+  {
+    title: 'Test Tool 5',
+    description: 'A test tool'
+  },
+  {
+    title: 'Test Tool 6',
+    description: 'A test tool'
+  },
+]
+
+export default function() {
+  return <><Grid items={items} cols={3}/></>
+}

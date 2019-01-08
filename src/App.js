@@ -5,10 +5,6 @@ import ToolsPage from './pages/Tools'
 import './sass/App.scss';
 
 class App extends React.Component {
-  handleSelect(eventKey, event) {
-    this.setState({ activeTab: eventKey })
-  }
-
   render() {
     return (
       <Tabs defaultActiveKey={1}>
