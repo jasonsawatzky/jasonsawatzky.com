@@ -1,16 +1,12 @@
 import React from 'react'
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap'
 
-export default function({ items, cols }) {
-  return <Grid style={{marginTop: '3%'}}>{renderRows(items, cols)}</Grid>
+export default function({ children, cols }) {
+  return <Grid style={{marginTop: '3%'}}>{renderRows(children, cols)}</Grid>
 }
 
 function renderItem(item, cols) {
-  return (
-    <Col xs={12} md={(12 / cols)}>
-      { item }
-    </Col>
-  )
+  return <Col xs={12} md={(12 / cols)}>{ item }</Col>
 }
 
 function renderRow(row, cols) {

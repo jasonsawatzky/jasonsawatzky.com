@@ -4,37 +4,43 @@ import mdGraphQLSpec from '../components/mdGraphQLSpec'
 import ToolButton from '../components/ToolButton'
 import { List } from 'immutable'
 
-
+const tools = List([
+  {
+    title: 'Markdown GraphQL Specification Generator',
+    description: 'A tool to generate graphql documentation in markdown',
+    tool: mdGraphQLSpec
+  }
+])
 
 export default class Tools extends Component {
   constructor(props) {
-    super(props);
-
-    this.tools = List([
-      <ToolButton title='md-graphql-spec'
-        description='A tool to generate graphql documentation in markdown'
-        onSelect={this.createToolActivator(mdGraphQLSpec({close: this.createToolDeactivator()}))}
-      />
-    ])
-
+    super(props)
     this.state = {}
+    this.tools = this.createToolComponents(tools)
+  }
+
+  createToolComponents(tools) {
+    return tools.map(tool => ToolButton(
+      Object.assign(tool, { onSelect: this.createToolActivator(tool.tool) })
+    ))
   }
 
   selectActiveTool(active) {
-    this.setState({ active })
+    this.setState({active})
   }
 
-  createToolActivator(tool) {
-    return () => this.selectActiveTool(tool)
+  createToolActivator(Tool) {
+    return () => this.selectActiveTool(Tool({close: this.createToolDeactivator()}))
   }
 
   createToolDeactivator() {
-    return (() => this.selectActiveTool(null))
+    return () => this.selectActiveTool(null)
   }
 
   render() {
     return this.state.active ?
-      this.state.active :
-      <Grid items={this.tools} cols={3}/>
+      this.state.active
+    :
+      Grid({ items: this.tools, cols: 3, children: this.tools })
   }
 }
