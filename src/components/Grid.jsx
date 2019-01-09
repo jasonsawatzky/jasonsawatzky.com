@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Row, Col, Panel } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 export default function({ items, cols }) {
   return <Grid style={{marginTop: '3%'}}>{renderRows(items, cols)}</Grid>
@@ -8,12 +8,7 @@ export default function({ items, cols }) {
 function renderItem(item, cols) {
   return (
     <Col xs={12} md={(12 / cols)}>
-      <Panel>
-        <Panel.Body>
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
-        </Panel.Body>
-      </Panel>
+      { item }
     </Col>
   )
 }
