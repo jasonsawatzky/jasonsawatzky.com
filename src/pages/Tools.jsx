@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import Grid from '../components/Grid'
-import mdGraphQLSpec from '../components/mdGraphQLSpec'
+import MdGraphQLSpec from '../components/MdGraphQLSpec'
+import ChordCleaner from '../components/ChordCleaner'
 import ToolButton from '../components/ToolButton'
 import { List } from 'immutable'
 
@@ -8,7 +9,12 @@ const tools = List([
   {
     title: 'Markdown GraphQL Specification Generator',
     description: 'A tool to generate graphql documentation in markdown',
-    tool: mdGraphQLSpec
+    tool: MdGraphQLSpec
+  },
+  {
+    title: 'Chord Cleaner',
+    description: 'A tool to display guitar chords from popular sites in a clean, consistent format.',
+    tool: ChordCleaner
   }
 ])
 
