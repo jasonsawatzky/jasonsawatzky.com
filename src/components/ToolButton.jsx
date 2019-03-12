@@ -1,5 +1,5 @@
 import React from 'react'
-import { Panel } from 'react-bootstrap';
+import { Panel } from 'react-bootstrap'
 
 export default function({ onSelect, title, description }) {
   return (

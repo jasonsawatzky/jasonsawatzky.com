@@ -1,8 +1,8 @@
 import { Component } from 'react'
-import Grid from '../components/Grid'
-import MdGraphQLSpec from '../components/MdGraphQLSpec'
-import ChordCleaner from '../components/ChordCleaner'
-import ToolButton from '../components/ToolButton'
+import Grid from '../Grid'
+import MdGraphQLSpec from '../tools/MdGraphQLSpec'
+import ChordCleaner from '../tools/ChordCleaner'
+import ToolButton from '../ToolButton'
 import { List } from 'immutable'
 
 const tools = List([
@@ -27,7 +27,7 @@ export default class Tools extends Component {
 
   createToolComponents(tools) {
     return tools.map(tool => ToolButton(
-      Object.assign(tool, { onSelect: this.createToolActivator(tool.tool) })
+      { ...tool, onSelect: this.createToolActivator(tool.tool) }
     ))
   }
 
@@ -36,7 +36,7 @@ export default class Tools extends Component {
   }
 
   createToolActivator(Tool) {
-    return () => this.selectActiveTool(Tool({close: this.createToolDeactivator()}))
+    return () => this.selectActiveTool(Tool({ close: this.createToolDeactivator() }))
   }
 
   createToolDeactivator() {

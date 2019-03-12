@@ -1,6 +1,6 @@
 import React from 'react'
 import Tool from './Tool'
-import githubIcon from '../images/github.png'
+import githubIcon from '../../images/github.png'
 
 export default function({ close }) {
   return (
